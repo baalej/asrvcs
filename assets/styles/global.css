@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'Times Ten';
+  src: url('../fonts/TimesTenLTStd-RomanWeb.woff2') format('woff2'),
+    url('../fonts/TimesTenLTStd-RomanWeb.woff') format('woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Times Ten', 'Times New Roman', Times, serif;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* header .cover {
+  height: calc(100vh - 1rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+h1, h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+header,
+header .cover {
+  pointer-events: none;
+}
+
+header .cover .heading,
+header p {
+  pointer-events: all;
+}
+
+header .cover .heading {
+  margin-top: calc(100vh - 3rem);
+}
+
+main {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.previous, .next {
+  position: fixed;
+  width: 50vw;
+  height: 100vh;
+}
+
+.previous {
+  top: 0;
+  left: 0;
+  cursor: w-resize;
+}
+
+.next {
+  top: 0;
+  right: 0;
+  cursor: e-resize;
+}
+
+.gallery {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* .gallery figure {
+  position: relative;
+  margin: 0;
+}
+
+.gallery figure figcaption {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+} */
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
