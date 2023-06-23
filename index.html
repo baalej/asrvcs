@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,15 +29,68 @@
     </p>
   </header>
   <main>
-    <div class="previous"></div>
-    <div class="next"></div>
-    <div class="gallery">
-      <img src="./assets/images/IMG_5150.jpg" alt="From A to B to A">
-      <img src="./assets/images/IMG_5150_2.jpg" alt="From A to B to A">
-      <img src="./assets/images/YAZD2351.jpg" alt="From A to B to A">
+    <!-- <div id="carousel-controls">
+      <div class="button previous" aria-label="Previous" data-direction="start"></div>
+      <div class="button next" aria-label="Next" data-direction="end"></div>
+    </div> -->
+
+    <div class="carousel">
+      <div class="carousel-scroll-container" role="region" aria-label="Image carousel" tabindex="0">
+        <ol class="carousel-media" role="list">
+          <li class="carousel-item">
+            <img src="./assets/media/IMG_5150.jpg" alt="From A to B to A">
+          </li>
+          <li class="carousel-item">
+            <img src="./assets/media/YAZD2351.jpg" alt="From A to B to A">
+          </li>
+          <li class="carousel-item">
+            <video src="./assets/media/yohji yamamoto_ rewind_forward.mp4" autoplay="autoplay" muted></video>
+          </li>
+          <li class="carousel-item">
+            <img src="./assets/media/130701.jpg" alt="From A to B to A">
+          </li>
+        </ol>
+      </div>
     </div>
   </main>
-  <script src="./assets/scripts/app.js"></script>
-</body>
 
+  <template id="carousel-controls">
+    <ol role="list" class="carousel-controls" aria-label="Navigation controls">
+      <li>
+        <button
+          class="carousel-control"
+          aria-label="Previous"
+          data-direction="start"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button class="carousel-control" aria-label="Next" data-direction="end">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </li>
+    </ol>
+  </template>
+
+  <script type="module" src="./assets/scripts/app.js"></script>
+</body>
 </html>
