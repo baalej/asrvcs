@@ -17,6 +17,10 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+body {
+  color: var(--color);
+}
+
 header {
   text-align: center;
   position: relative;
@@ -76,6 +80,10 @@ main {
   cursor: e-resize;
 }
 
+.carousel {
+  position: relative;
+}
+
 .carousel [role='list'] {
   /* These are more appropriate in a CSS reset */
   padding: 0;
@@ -115,13 +123,7 @@ main {
 .carousel-item :is(picture, figure, img, video) {
   height: 100%;
 }
-.carousel-item img {
-  /* Remove line height (typically done in a CSS reset) */
-  display: block;
-  /* Responsive width based on aspect ratio */
-  width: auto;
-}
-
+.carousel-item img,
 .carousel-item video {
   /* Remove line height (typically done in a CSS reset) */
   display: block;
@@ -136,74 +138,6 @@ main {
 .carousel-item:last-of-type {
   /* Allow users to fully scroll to the end */
   scroll-snap-align: end;
-}
-
-.carousel {
-  position: relative;
-}
-
-.carousel [role="list"] {
-  padding: 0;
-  list-style: none;
-}
-
-.carousel-scroll-container {
-  /* Enable horizontal scrolling */
-  overflow-x: auto;
-
-  /* Enable horizontal scroll snap */
-  scroll-snap-type: x proximity;
-
-  /* Smoothly snap from one focal point to another */
-  scroll-behavior: smooth;
-}
-
-.carousel-media {
-  /* Arrange media horizontally */
-  display: flex;
-  /* gap: 1rem; */
-}
-
-.carousel-item {
-  /* Limit the height of each media item */
-  height: 100vh;
-
-  /* Prevent media from shrinking */
-  flex-shrink: 0;
-
-  /* The focal point for each item is the center */
-  scroll-snap-align: center;
-}
-
-.carousel-item:first-of-type {
-  /* Allow users to fully scroll to the start */
-  scroll-snap-align: start;
-}
-
-.carousel-item:last-of-type {
-  /* Allow users to fully scroll to the end */
-  scroll-snap-align: end;
-}
-
-.carousel-item > *,
-.carousel-item :is(figure, picture, img, video) {
-  height: 100%;
-}
-
-.carousel-item img {
-  /* Responsive width based on aspect ratio */
-  width: auto;
-}
-
-.carousel-item video {
-  /* Responsive width based on aspect ratio */
-  width: auto;
-}
-
-.slideshow .carousel-item {
-  /* Full-width slides, taller height */
-  height: 90vmin;
-  width: 100%;
 }
 
 .carousel figure {
@@ -212,13 +146,13 @@ main {
 
 .carousel figcaption {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   padding: 0.25rem;
   text-align: center;
-  background-color: hsl(0deg 0% 0% / 75%);
-  font-size: small;
+  /* background-color: hsl(0deg 0% 0% / 75%); */
+  /* font-size: small; */
 }
 
 .carousel figcaption,
@@ -227,7 +161,7 @@ main {
 }
 
 .carousel-control {
-  --offset-x: 0.25rem;
+  --offset-x: 0;
   cursor: pointer;
 
   /* Anchor the controls relative to the outer wrapper */
@@ -238,11 +172,15 @@ main {
   /* padding: 1rem; */
   transform: translateY(-50%);
   /* border-radius: 50%; */
-  border: solid 1px hsl(0deg 0% 50%);
-  background-color: white;
+  /* border: solid 1px hsl(0deg 0% 50%); */
+  /* background-color: white; */
   color: black;
-  box-shadow: 0 0 16px 0 hsl(0deg 0% 0% / 20%);
+  /* box-shadow: 0 0 16px 0 hsl(0deg 0% 0% / 20%); */
   line-height: 0;
+  border: none;
+  background-color: unset;
+  width: 50%;
+  height: 100%;
 }
 
 /* Don't allow icons to be event targets */
@@ -253,31 +191,18 @@ main {
 .carousel-control[data-direction="start"] {
   /* Same as left in LTR and right in RTL */
   inset-inline-start: var(--offset-x);
+  cursor: w-resize;
 }
 
 .carousel-control[data-direction="end"] {
   /* Same as right in LTR and left in RTL */
   inset-inline-end: var(--offset-x);
-}
-
-[dir="rtl"] .carousel-control {
-  transform: translateY(-50%) scale(-1);
+  cursor: e-resize;
 }
 
 .carousel-control[aria-disabled="true"] {
-  filter: opacity(0.5);
+  /* filter: opacity(0.5); */
   cursor: not-allowed;
-}
-
-label {
-  display: block;
-  text-align: center;
-  margin-bottom: 1rem;
-  direction: ltr;
-}
-
-input[type="checkbox"] {
-  vertical-align: middle;
 }
 
 @media (prefers-color-scheme: light) {

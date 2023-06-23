@@ -1,12 +1,6 @@
 import throttle from "https://cdn.skypack.dev/lodash@4.17.21/throttle";
 
 /**
- * Returns `true` if the given element is in a horizontal RTL writing mode.
- * @param {HTMLElement} element
- */
-const isRtl = (element) => window.getComputedStyle(element).direction === 'rtl';
-
-/**
  * Returns the focal point for the given element, as determined by its scroll-snap-align (falling back to the fallback if not specified).
  * @param {HTMLElement} element The element in question.
  * @param {'start'|'center'|'end'} [fallback] A fallback value for the focal point.
@@ -26,18 +20,16 @@ const getFocalPoint = (element, fallback = 'center') => {
  * @param {'start'|'center'|'end'} [focalPoint]
  */
 const getDistanceToFocalPoint = (element, focalPoint = 'center') => {
-  const isHorizontalRtl = isRtl(element);
-  const documentWidth = document.documentElement.clientWidth;
   const rect = element.getBoundingClientRect();
   switch (focalPoint) {
     case 'start':
-      return isHorizontalRtl ? documentWidth - rect.right : rect.left;
+      return rect.left;
     case 'end':
-      return isHorizontalRtl ? documentWidth - rect.left : rect.right;
+      return rect.right;
     case 'center':
     default: {
       const centerFromLeft = rect.left + rect.width / 2;
-      return isHorizontalRtl ? documentWidth - centerFromLeft : centerFromLeft;
+      return centerFromLeft;
     }
   }
 };
@@ -120,14 +112,15 @@ class Carousel {
         (direction === 'end' && distanceToItem - scrollContainerCenter > 1);
       if (isTarget) {
         targetFocalPoint = distanceToItem;
+        const id = mediaItem.id;
+        history.replaceState({}, '', `#${id}`);
         break;
       }
     }
 
     // This should never happen, but it doesn't hurt to check
     if (typeof targetFocalPoint === 'undefined') return;
-    // RTL flips the direction
-    const sign = isRtl(this.root) ? -1 : 1;
+    const sign = 1;
     const scrollAmount = sign * (targetFocalPoint - scrollContainerCenter);
     this.scrollContainer.scrollBy({ left: scrollAmount });
   }
@@ -138,10 +131,3 @@ const carousel = new Carousel({
   root: document.querySelector('.carousel'),
   navigationControls: navigationControlsTemplate.content.cloneNode(true),
 });
-
-// RTL switcher, for demo purposes only
-// const rtlToggle = document.querySelector('#rtl-toggle');
-// rtlToggle.addEventListener('input', (e) => {
-//   const dir = e.target.checked ? 'rtl' : 'ltr';
-//   document.documentElement.dir = dir;
-// });
