@@ -81,17 +81,6 @@ main {
   height: 100%;
 }
 
-/* .gallery figure {
-  position: relative;
-  margin: 0;
-}
-
-.gallery figure figcaption {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-} */
-
 @media (prefers-color-scheme: light) {
   body {
     background-color: white;
