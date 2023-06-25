@@ -247,16 +247,13 @@ main {
   cursor: not-allowed;
 }
 
-/* @media (prefers-color-scheme: light) {
-  body {
-    background-color: white;
-    color: black;
+@media only screen and (max-width: 640px) {
+  header .cover .heading {
+    margin-top: calc(100svh - 3rem);
+  }
+
+  .carousel-item > *, .carousel-item :is(picture, figure, img, video) {
+    max-width: 100vw;
+    object-fit: cover;
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: black;
-    color: white;
-  }
-} */
