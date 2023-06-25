@@ -1,4 +1,5 @@
-import throttle from "https://cdn.skypack.dev/lodash@4.17.21/throttle";
+// import throttle from "https://cdn.skypack.dev/lodash@4.17.21/throttle";
+import throttle from 'https://cdn.skypack.dev/lodash.throttle';
 
 /**
  * Returns the focal point for the given element, as determined by its scroll-snap-align (falling back to the fallback if not specified).

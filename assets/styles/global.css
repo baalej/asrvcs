@@ -11,21 +11,41 @@
 }
 
 html {
-  font-family: 'Times Ten', 'Times New Roman', Times, serif;
-  text-rendering: optimizeLegibility;
+  /* font-family: 'Times Ten', 'Times New Roman', Times, serif; */
+  /* text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; */
 }
 
 body {
-  color: var(--color);
+  color: white;
+  text-shadow: black 0 0 2px;
+}
+
+.dark {
+  color: white;
+  text-shadow: black 0 0 2px;
+}
+
+.light {
+  color: black;
+  text-shadow: white 0 0 2px;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.15rem;
+  text-decoration-thickness: 0.05rem;
+}
+
+a:hover {
+  color: blue;
 }
 
 header {
-  text-align: center;
   position: relative;
   z-index: 1;
-  padding: 0 1em;
+  padding: 0 1rem;
 }
 
 p {
@@ -47,6 +67,10 @@ header .cover {
 header .cover .heading,
 header p {
   pointer-events: all;
+}
+
+header .cover .heading {
+  text-align: center;
 }
 
 header .cover .heading {
@@ -147,18 +171,36 @@ main {
 .carousel figcaption {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0.25rem;
+  /* left: 0; */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
   text-align: center;
   /* background-color: hsl(0deg 0% 0% / 75%); */
-  /* font-size: small; */
+  font-size: small;
+  z-index: 1;
+  max-width: 100%;
+  width: 100vw;
 }
 
-.carousel figcaption,
-.carousel figcaption * {
-  color: white;
+.carousel li:first-child figcaption {
+  left: 0;
+  transform: unset;
 }
+
+.carousel li:last-child figcaption {
+  left: unset;
+  right: 0;
+  transform: unset;
+}
+
+/* .carousel figcaption .more-info {
+  cursor: pointer;
+}
+
+.carousel figcaption .more-info:hover {
+  color: blue;
+} */
 
 .carousel-control {
   --offset-x: 0;
@@ -169,7 +211,7 @@ main {
 
   /* Center the controls vertically */
   top: 50%;
-  /* padding: 1rem; */
+  /* padding: 0.25rem; */
   transform: translateY(-50%);
   /* border-radius: 50%; */
   /* border: solid 1px hsl(0deg 0% 50%); */
@@ -201,11 +243,11 @@ main {
 }
 
 .carousel-control[aria-disabled="true"] {
-  /* filter: opacity(0.5); */
+  filter: opacity(0.25);
   cursor: not-allowed;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   body {
     background-color: white;
     color: black;
@@ -217,4 +259,4 @@ main {
     background-color: black;
     color: white;
   }
-}
+} */

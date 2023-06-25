@@ -9,6 +9,8 @@
     content="Alejandro Bellón Ample is a graphic designer and developer working with organizations and individuals from different fields.">
   <meta name="keywords" content="design, typography, publications, development, websites, culture, art, fashion">
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="favicon-light.png" rel="icon" media="(prefers-color-scheme: light)" />
+  <link href="favicon-dark.png" rel="icon" media="(prefers-color-scheme: dark)" />
   <link rel="stylesheet" href="./assets/styles/global.css">
 </head>
 
@@ -20,43 +22,62 @@
         <h1>Alejandro</h1>
       </div>
     </div>
-    <p>
-      Alejandro works span accross multiple fields in art, fashion and culture that translate into books, websites and
-      identities.
-      He collaborates with artists, designers, writers, curators and art institutions such as Sean Yendrys, Julia
-      Novitch, Paula Busckevica, Alex Margetic, Pau Orts, Javier Unknos, Alex Marco, Vicent Orts, Pablo Bolumar,
-      Leorosa.
-    </p>
-    <p>
-      Contact:
-      Helmstrasse 4, Schöneberg
-      Berlin, DE
-      <a href="#">Mail</a>
-    </p>
+    <div class="information">
+      <p>
+        Alejandro is a graphic designer and web developer working with individuals and organizations from Art, Culture and Fashion.
+        His works spans accross multiple fields such us typography, editorial and digital design and development. 
+        In his practice he often collaborates with other designers and artists, some of the include: Julia Novitch, Sean Yendrys, Paula Buskevica, Alexandra Margetic, Pau Orts, Vicent Orts, Javier Unknos, Pablo Bolumar.
+      </p>
+      <p>
+        A seleccion of clients he has worked with include: Efremidis, Zero Point Berlin, Arts of the Working Class, Estonian Academy of Arts, Álex Marco, Tarquim.
+      </p>
+      <p>
+        Helmstraße 4, 10827<br>
+        Berlin, DE<br>
+        <a href="mailto:abample@gmail.com">Mail</a>
+      </p>
+    </div>
   </header>
   <main>
-    <!-- <div id="carousel-controls">
-      <div class="button previous" aria-label="Previous" data-direction="start"></div>
-      <div class="button next" aria-label="Next" data-direction="end"></div>
-    </div> -->
 
     <div class="carousel">
       <div class="carousel-scroll-container" role="region" aria-label="Image carousel" tabindex="0">
         <ol class="carousel-media" role="list">
-          <li class="carousel-item" id="fromatobtoa" data-color="white">
-            <img src="./assets/media/IMG_5150.jpg" alt="From A to B to A">
+          <li class="carousel-item" id="IMG_5150">
+            <figure class="dark">
+              <img src="./assets/media/optimized/IMG_5150.jpg" alt="A picture showing a spread from the publication From a to B to A" loading="lazy">
+              <figcaption><i>From A to B to A</i>, self-published, 48 pages, 210 × 290 mm, Riso printed.</figcaption>
+            </figure>
           </li>
-          <li class="carousel-item" id="fromatobtoa-2" data-color="white">
-            <img src="./assets/media/YAZD2351.jpg" alt="From A to B to A">
+          <li class="carousel-item" id="IMG_5152">
+            <figure class="dark">
+              <img src="./assets/media/optimized/IMG_5152.jpg" alt="A picture showing a spread from the publication From a to B to A" loading="lazy">
+              <figcaption><i>From A to B to A</i>, self-published, 48 pages, 210 × 297 mm, Riso printed.</figcaption>
+            </figure>
           </li>
-          <li class="carousel-item" id="ssie" data-color="red">
-            <img src="./assets/media/IMG_5132.jpg" alt="From A to B to A">
+          <li class="carousel-item" id="IMG_3709">
+            <figure class="light">
+              <img src="./assets/media/optimized/IMG_3709.jpg" alt="A Screenshot from Manuel Raeder Instagram publication about an exhibition in Tiergarten" loading="lazy">
+              <figcaption><i>Cikigu trttprptt</i>, site-specific website using geolocation to display information about artworks distributed accross Tiergarten in Berlin. Visit the website at <a href="https://garden.eka-gd-ma.ee" target="_blank">garden.eka-gd-ma.ee</a>. Image of the work by Paula Buskevica, picture by Louise Borinski.</figcaption>
+            </figure>
           </li>
-          <li class="carousel-item" id="confab" data-color="blue">
-            <img src="./assets/media/IMG_4095.jpg" alt="From A to B to A">
+          <li class="carousel-item" id="Efremidis">
+            <figure class="light">
+              <img src="./assets/media/optimized/Efremidis.jpg" alt="Screenshot from the Efremidis Gallery's website" loading="lazy">
+              <figcaption><i>Efremidis</i> Gallery, Berlin. Designed by Alexandra Margetic. Visit the website at <a href="https://efremidis.com" target="_blank">efremidis.com</a></figcaption>
+            </figure>
           </li>
-          <li class="carousel-item" id="narva" data-color="green">
-            <img src="./assets/media/130701.jpg" alt="From A to B to A">
+          <li class="carousel-item" id="AlexMarco_IVAM_portada">
+            <figure class="dark">
+              <img src="./assets/media/optimized/AlexMarco_IVAM_portada.jpeg" alt="Pau holding the sheet on her hands" loading="lazy">
+              <figcaption><i>Lo que pasa en el parque se queda en el parque</i> is an intervention at the Valencian Institute of Modern Art (IVAM) carried by Álex Marco. Pau Orts and I designed a printed sheet featuring information about the intervention. A4, 210 × 297 mm, digital printed, folded.</figcaption>
+            </figure>
+          </li>
+          <li class="carousel-item" id="IMG_5062">
+            <figure class="dark">
+              <img src="./assets/media/optimized/IMG_5062.jpg" alt="Picture of the poster laying on the floor with reflection from the window" loading="lazy">
+              <figcaption><i>Structures, Systems, Interactions and Effects</i> was the name of a class taught by Julia Novitch at the Master of Arts in Graphic Design at the Estonian Academy of Arts. Poster announcing her visit to Estonian Art Academy. 50 × 70 cm, digital printing and embossing.</figcaption>
+            </figure>
           </li>
         </ol>
       </div>
@@ -66,11 +87,7 @@
   <template id="carousel-controls">
     <ol role="list" class="carousel-controls" aria-label="Navigation controls">
       <li>
-        <button
-          class="carousel-control"
-          aria-label="Previous"
-          data-direction="start"
-        >
+        <button class="carousel-control" aria-label="Previous" data-direction="start">
           <!-- <svg
             width="24"
             height="24"
