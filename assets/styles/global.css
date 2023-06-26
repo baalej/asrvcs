@@ -20,6 +20,8 @@ html {
 body {
   color: white;
   text-shadow: black 0 0 2px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.02em;
 }
 
 .dark {
