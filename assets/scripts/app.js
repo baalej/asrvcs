@@ -102,7 +102,6 @@ class Carousel {
   navigateToNextItem(direction) {
     let mediaItems = Array.from(this.mediaList.querySelectorAll(':scope > *'));
     mediaItems = direction === 'start' ? mediaItems.reverse() : mediaItems;
-
     const scrollContainerCenter = getDistanceToFocalPoint(this.scrollContainer, 'center');
     let targetFocalPoint;
     for (const mediaItem of mediaItems) {
