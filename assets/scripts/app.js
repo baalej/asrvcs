@@ -113,7 +113,7 @@ class Carousel {
         (direction === 'end' && distanceToItem - scrollContainerCenter > 1);
       if (isTarget) {
         targetFocalPoint = distanceToItem;
-        // history.replaceState({}, '', `#${mediaItem.id}`);
+        // history.pushState({}, '', `#${mediaItem.id}`);
         break;
       }
     }

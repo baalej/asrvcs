@@ -19,6 +19,7 @@ html {
 
 body {
   color: white;
+  background-color: black;
   text-shadow: black 0 0 2px;
   font-family: Arial, sans-serif;
   letter-spacing: 0.02em;
@@ -126,7 +127,7 @@ main {
   /* Enable horizontal scroll snap */
   scroll-snap-type: x proximity;
   /* Smoothly snap from one focal point to another */
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 .carousel-scroll-container::-webkit-scrollbar {
@@ -143,13 +144,8 @@ main {
   flex-shrink: 0;
   /* The focal point for each item is the center */
   scroll-snap-align: center;
-  
-  /* Expand media item space to whole window */
-  width: 100vw;
-  /* Center media item */
-  display: flex;
-  justify-content: center;
 }
+
 /* Target direct descendant too in case the images have a wrapper parent */
 .carousel-item > *,
 .carousel-item :is(picture, figure, img, video) {
@@ -229,7 +225,7 @@ main {
   line-height: 0;
   border: none;
   background-color: unset;
-  width: 50%;
+  width: 25%;
   height: 100%;
 }
 
@@ -251,7 +247,7 @@ main {
 }
 
 .carousel-control[aria-disabled="true"] {
-  filter: opacity(0.25);
+  /* filter: opacity(0.25); */
   cursor: not-allowed;
 }
 
