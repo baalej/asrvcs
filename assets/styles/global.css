@@ -126,7 +126,7 @@ main {
   /* Enable horizontal scroll snap */
   scroll-snap-type: x proximity;
   /* Smoothly snap from one focal point to another */
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 .carousel-scroll-container::-webkit-scrollbar {
@@ -143,6 +143,12 @@ main {
   flex-shrink: 0;
   /* The focal point for each item is the center */
   scroll-snap-align: center;
+  
+  /* Expand media item space to whole window */
+  width: 100vw;
+  /* Center media item */
+  display: flex;
+  justify-content: center;
 }
 /* Target direct descendant too in case the images have a wrapper parent */
 .carousel-item > *,
